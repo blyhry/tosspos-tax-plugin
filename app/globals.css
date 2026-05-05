@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Seed Design System — real token values from @seed-design/stylesheet */
+:root {
+  /* Gray scale */
+  --gray-00:  #ffffff;
+  --gray-50:  #f7f8fa;
+  --gray-100: #f2f3f6;
+  --gray-200: #eaebee;
+  --gray-300: #dcdee3;
+  --gray-400: #d1d3d8;
+  --gray-500: #adb1ba;
+  --gray-600: #868b94;
+  --gray-700: #4d5159;
+  --gray-800: #393a40;
+  --gray-900: #212124;
+
+  /* Semantic */
+  --bg:         #f2f3f6; /* paper-background */
+  --surface:    #ffffff; /* paper-sheet */
+  --text:       #212124; /* ink-text */
+  --text-low:   #868b94; /* ink-text-low */
+  --divider:    #eaebee; /* divider-2 */
+
+  /* Brand (iShopCare — Toss Blue 계열) */
+  --blue:      #3182F6;
+  --blue-low:  #ebf4ff;
+
+  /* Semantic colors */
+  --green:     #1aa174; /* green-500 */
+  --green-low: #e8faf6; /* green-50 */
+  --red:       #fa2314; /* red-600 */
+  --red-low:   #fff3f2; /* red-50 */
+  --yellow:    #dea651; /* yellow-400 */
+  --yellow-low:#fff7e6; /* yellow-50 */
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", Pretendard, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Seed Typography ─────────────────────────────────────────── */
+/* title1-bold: 24px/135%, bold */
+.title1  { font-size: 24px; font-weight: 700; line-height: 135%; }
+/* title2-bold: 20px/135%, bold */
+.title2  { font-size: 20px; font-weight: 700; line-height: 135%; }
+/* subtitle1-bold: 16px/135%, bold */
+.sub1    { font-size: 16px; font-weight: 700; line-height: 135%; }
+/* body-l1-regular: 16px/150%, regular */
+.body1   { font-size: 16px; font-weight: 400; line-height: 150%; }
+/* body-l2-regular: 14px/150%, regular */
+.body2   { font-size: 14px; font-weight: 400; line-height: 150%; }
+/* label3-regular: 14px/135% */
+.label3  { font-size: 14px; font-weight: 400; line-height: 135%; }
+/* caption1-regular: 13px/150% */
+.caption { font-size: 13px; font-weight: 400; line-height: 150%; }
+
+/* ── Seed Input ──────────────────────────────────────────────── */
+.seed-input {
+  width: 100%;
+  height: 56px;
+  background: var(--surface);
+  border: 1.5px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.seed-input::placeholder { color: var(--gray-400); font-weight: 400; }
+.seed-input:focus { border-color: var(--blue); }
+
+/* ── Seed Button ─────────────────────────────────────────────── */
+.seed-btn {
+  width: 100%;
+  height: 56px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.1s, transform 0.1s;
+  -webkit-appearance: none;
+}
+.seed-btn:active  { filter: brightness(0.92); transform: scale(0.98); }
+.seed-btn:disabled { background: var(--gray-200); color: var(--gray-500); cursor: default; transform: none; }
+
+/* ── Seed Chip (선택 카드) ────────────────────────────────────── */
+.seed-chip {
+  background: var(--surface);
+  border: 1.5px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.seed-chip.selected {
+  border-color: var(--blue);
+  background: var(--blue-low);
+}
