@@ -184,21 +184,24 @@ function ResultContent() {
 
         {/* CTA */}
         <div style={{ background: "var(--blue)", borderRadius: 20, padding: "24px 20px" }}>
-          <p style={{ fontSize: 20, fontWeight: 700, color: "#fff", lineHeight: "135%", marginBottom: 6 }}>
-            이 돈,<br />실제로 받고 싶으세요?
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.75)", marginBottom: 8, fontWeight: 600, letterSpacing: ".2px" }}>
+            사장님의 든든한 동반자
           </p>
-          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.8)", lineHeight: "150%", marginBottom: 20 }}>
-            아이샵케어 가맹점이 되시면<br />절세 컨설팅을 무료로 도와드려요
+          <p style={{ fontSize: 20, fontWeight: 800, color: "#fff", lineHeight: "135%", marginBottom: 8 }}>
+            아이샵케어
           </p>
-          <a href="tel:1588-0000" style={{
+          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.85)", lineHeight: "160%", marginBottom: 20 }}>
+            결제단말기 도입부터 창업 컨설팅까지,<br />사장님 곁에서 함께해드려요.
+          </p>
+          <a href="https://www.ishopcare.co.kr/Contact" target="_blank" rel="noreferrer noopener" style={{
             display: "block", textAlign: "center", background: "#fff", color: "var(--blue)",
             fontWeight: 700, fontSize: 17, height: 56, lineHeight: "56px",
             borderRadius: 12, textDecoration: "none",
           }}>
-            무료 상담 신청하기
+            지금 바로 문의하기
           </a>
           <p style={{ textAlign: "center", fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 10 }}>
-            평일 09:00 ~ 18:00
+            무료 · 부담 없이 물어보세요
           </p>
         </div>
 
