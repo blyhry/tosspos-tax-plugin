@@ -82,59 +82,56 @@ function BottomBtn({ label, disabled, onClick }: { label: string; disabled: bool
 /* ══════════════════════
    랜딩 화면
 ══════════════════════ */
-function Landing({ onStart }: { onStart: () => void }) {
-  return (
-    <div style={{
-      minHeight: "100dvh", display: "flex", flexDirection: "column",
-      background: "#ffffff", maxWidth: 390, margin: "0 auto", padding: "0 24px",
-    }}>
-      {/* 브랜드 */}
-      <div style={{ paddingTop: 52, paddingBottom: 0 }}>
-        <span style={{ fontSize: 13, fontWeight: 700, color: "var(--blue)", letterSpacing: "-0.3px" }}>
-          iShopCare
-        </span>
-      </div>
+const CheckIcon = () => (
+  <div style={{ width: 22, height: 22, borderRadius: "50%", background: "var(--blue)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 1 }}>
+    <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+      <path d="M1 4l2.5 2.5L9 1" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  </div>
+);
 
-      {/* 메인 카피 */}
-      <div style={{ marginTop: 40, flex: 1 }}>
-        <p style={{ fontSize: 13, color: "var(--text-low)", marginBottom: 14, lineHeight: "135%" }}>
+function Landing({ onStart }: { onStart: () => void }) {
+  const points = [
+    ["부가세 신고 때 카드 매출의 1.3% 환급", "신용카드 발행세액공제"],
+    ["식재료 세금계산서가 있다면 추가 환급 가능", "의제매입세액공제 (음식점)"],
+    ["30초 진단, 무료, 개인정보 불필요", "지금 바로 확인 가능"],
+  ];
+  return (
+    <div style={{ minHeight: "100dvh", display: "flex", flexDirection: "column", background: "#ffffff", maxWidth: 390, margin: "0 auto" }}>
+
+      {/* Hero */}
+      <div style={{ padding: "52px 24px 28px" }}>
+        <p style={{ fontSize: 12, fontWeight: 600, color: "var(--blue)", letterSpacing: ".2px", marginBottom: 14 }}>
           소상공인 절세 진단
         </p>
-        <h1 style={{
-          fontSize: 34, fontWeight: 700, lineHeight: "130%",
-          color: "var(--text)", letterSpacing: "-0.5px", marginBottom: 24,
-        }}>
+        <h1 style={{ fontSize: 26, fontWeight: 800, color: "var(--text)", lineHeight: "135%", letterSpacing: "-0.5px" }}>
           사장님,<br />
           지금 세금을<br />
-          더 내고 계세요
+          <span style={{ color: "var(--blue)" }}>더 내고 계세요</span>
         </h1>
-        <p style={{ fontSize: 16, color: "var(--text-low)", lineHeight: "165%", marginBottom: 40 }}>
-          카드로 결제받을 때마다<br />
-          나중에 돌려받을 수 있는 세금이 생겨요.<br />
-          모르고 그냥 넘어가는 분들이 많아요.
+        <p style={{ fontSize: 15, color: "var(--text-low)", marginTop: 14, lineHeight: "165%" }}>
+          <b style={{ color: "var(--text)" }}>아이샵케어가 도와드릴게요.</b><br />
+          카드 매출에서 돌려받는 세금,<br />
+          내 업종에 맞춰 30초 만에 진단해드려요.
         </p>
+      </div>
 
-        {/* 3가지 포인트 */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-          {[
-            ["부가세 신고 때 카드 매출의 1.3% 환급", "신용카드 발행세액공제"],
-            ["식재료 세금계산서가 있다면 추가 환급 가능", "의제매입세액공제 (음식점)"],
-            ["30초 진단, 무료, 개인정보 불필요", "지금 바로 확인 가능"],
-          ].map(([main, sub]) => (
-            <div key={main} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-              <div style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--blue)", marginTop: 7, flexShrink: 0 }} />
-              <div>
-                <p style={{ fontSize: 15, color: "var(--text)", fontWeight: 500, lineHeight: "135%" }}>{main}</p>
-                <p style={{ fontSize: 13, color: "var(--gray-500)", marginTop: 1 }}>{sub}</p>
-              </div>
+      {/* 포인트 카드 */}
+      <div style={{ margin: "0 20px 28px", background: "var(--bg)", borderRadius: 16, padding: 20 }}>
+        {points.map(([main, sub], i) => (
+          <div key={main} style={{ display: "flex", alignItems: "flex-start", gap: 12, ...(i < points.length - 1 ? { marginBottom: 16 } : {}) }}>
+            <CheckIcon />
+            <div>
+              <p style={{ fontSize: 14, fontWeight: 600, color: "var(--text)", lineHeight: "135%" }}>{main}</p>
+              <p style={{ fontSize: 13, color: "var(--text-low)", marginTop: 3, lineHeight: "150%" }}>{sub}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       {/* CTA */}
-      <div style={{ padding: "32px 0 48px" }}>
-        <button className="seed-btn" onClick={onStart}>
+      <div style={{ padding: "0 20px 40px", marginTop: "auto" }}>
+        <button className="seed-btn" onClick={onStart} style={{ borderRadius: 14, height: 56, fontSize: 17 }}>
           얼마나 돌려받을 수 있는지 확인하기
         </button>
         <p style={{ textAlign: "center", fontSize: 12, color: "var(--gray-500)", marginTop: 12 }}>
