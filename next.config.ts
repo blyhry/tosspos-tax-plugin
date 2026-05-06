@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/tosspos-tax-plugin",
+  basePath: "/merchant-tax-saving",
   images: { unoptimized: true },
 };
 
