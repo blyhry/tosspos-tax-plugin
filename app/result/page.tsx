@@ -50,7 +50,7 @@ function ResultContent() {
 
   return (
     <div style={{
-      minHeight: "100dvh", background: "var(--bg)", maxWidth: 480, margin: "0 auto",
+      minHeight: "100dvh", background: "var(--bg)", maxWidth: 390, margin: "0 auto",
       fontFamily: "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, sans-serif",
       WebkitFontSmoothing: "antialiased",
     }}>

@@ -40,7 +40,7 @@ function Screen({ children }: { children: React.ReactNode }) {
   return (
     <div style={{
       minHeight: "100dvh", display: "flex", flexDirection: "column",
-      background: "var(--bg)", maxWidth: 480, margin: "0 auto",
+      background: "var(--bg)", maxWidth: 390, margin: "0 auto",
     }}>
       {children}
     </div>
@@ -86,7 +86,7 @@ function Landing({ onStart }: { onStart: () => void }) {
   return (
     <div style={{
       minHeight: "100dvh", display: "flex", flexDirection: "column",
-      background: "#ffffff", maxWidth: 480, margin: "0 auto", padding: "0 24px",
+      background: "#ffffff", maxWidth: 390, margin: "0 auto", padding: "0 24px",
     }}>
       {/* 브랜드 */}
       <div style={{ paddingTop: 52, paddingBottom: 0 }}>
